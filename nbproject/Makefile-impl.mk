@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=SerialTrial.X
+PROJECTNAME=Serial_Trial
 
 # Active Configuration
 DEFAULTCONF=default
