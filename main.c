@@ -32,6 +32,21 @@ int main(int argc, char** argv) {
     
     //SSP1BUFbits.SSPBUF - Data Buffer, don't know where we are reading from yet
     
+    
+    // Initializing USART SND
+    // Transmit status and control register
+    TXSTA1bits.TX9 = 1; // Enabling 9 bit transmission, 0 would be 8 bits
+    TXSTA1bits.TXEN = 1; // Enable transmit
+    TXSTA1bits.SYNC = 0; // Asynchronous mode
+    //TXSTA1bits.SENDB = 0 // Sync Break transmission completed, if 1, sync break is cleared by hardware on completion
+    TXSTA1bits.BRGH = 1; // Sets High Baud Rate Select Bit
+    
+    // Receive status and control register
+    RCSTA1bits.SPEN = 1; // Enables serial port
+    
+    // Baud Rate Control register
+    //BAUDCON1bits.
+    
     return (EXIT_SUCCESS);
 }
 
