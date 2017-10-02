@@ -44,9 +44,10 @@ int main(int argc, char** argv) {
     // Receive status and control register
     RCSTA1bits.SPEN = 1; // Enables serial port
     
-    // Baud Rate Control register
+    // Baud Rate Control register  dont think this needs to be set right now actually
     //BAUDCON1bits.
     
+   
     return (EXIT_SUCCESS);
 }
 
