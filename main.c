@@ -55,6 +55,25 @@ int main(int argc, char** argv) {
     //BAUDCON1bits.
 
     SPBRGbits.SP1BRG = 1; // High bit of Baud Generator
+<<<<<<< HEAD
+=======
+    //Serinit();
+
+    //while(init)
+    //{
+    //printf("Hello world \n\r");
+    //}
+    // initialize needed variable
+    unsigned char pkt_size; pkt_size = 20;
+    unsigned char rec_buff[pkt_size];
+    unsigned char count; count = 0;
+    unsigned char* pointer; pointer = rec_buff;
+    // run loop code to do data loading
+    do{
+        while (~SSP1STATbits.BF); //keeps looping till buffer is full
+        pointer++ = SSP1BUF;
+    } while (++count ~= pkt_size);
+>>>>>>> bae8219ccc1981a4cb61c805145c1e3e9ee99cc5
 
     
 
