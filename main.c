@@ -75,6 +75,16 @@ int main(int argc, char** argv) {
     //{
     //printf("Hello world \n\r");
     //}
+    // initialize needed variable
+    unsigned char pkt_size; pkt_size = 20;
+    unsigned char rec_buff[pkt_size];
+    unsigned char count; count = 0;
+    unsigned char* pointer; pointer = rec_buff;
+    // run loop code to do data loading
+    do{
+        while (~SSP1STATbits.BF); //keeps looping till buffer is full
+        pointer++ = SSP1BUF;
+    } while (++count ~= pkt_size);
 
 
     return (EXIT_SUCCESS);
