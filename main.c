@@ -12,24 +12,10 @@
 #include "ADAS1000.h"
 #include "Communication.h"
 
-
+unsigned long PKT_SIZE;
 /*
  *
  */
-
-void Serinit(void)
-{
-  TRISC = 0xFF;
-  RCSTA = 0xB0;
-  TXSTA = 0x24;
-  SPBRG = 0x12;
-}
-void putch(char data)
-{
-
-  while(!TXIF);
-    TXREG = data;
-}
 
 int main(int argc, char** argv) {
 
@@ -69,13 +55,8 @@ int main(int argc, char** argv) {
     //BAUDCON1bits.
 
     SPBRGbits.SP1BRG = 1; // High bit of Baud Generator
-    //Serinit();
 
-    //while(init)
-    //{
-    //printf("Hello world \n\r");
-    //}
-
+    
 
     return (EXIT_SUCCESS);
 }
